@@ -25,3 +25,11 @@ class Camion(
         println("Capacidad de carga: $capacidadCarga kg")
     }
 }
+
+fun main() {
+    val vehiculo1: Vehiculo = CocheElectrico("Tesla", 80)
+    val vehiculo2: Vehiculo = Camion("Volvo", 5000)
+
+    vehiculo1.arrancar()
+    vehiculo2.arrancar()
+}

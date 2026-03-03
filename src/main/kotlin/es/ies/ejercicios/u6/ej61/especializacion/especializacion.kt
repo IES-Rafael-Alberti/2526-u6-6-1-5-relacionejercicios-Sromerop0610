@@ -42,3 +42,14 @@ class Diseñador(
         return "Diseñador: $nombre"
     }
 }
+
+fun main() {
+    val empleado1: Empleado = Programador("Ana", 1500.0, 10)
+    val empleado2: Empleado = Diseñador("Luis", 1400.0, 300.0)
+
+    println(empleado1.descripcion())
+    println("Salario: ${empleado1.calcularSalario()}")
+
+    println(empleado2.descripcion())
+    println("Salario: ${empleado2.calcularSalario()}")
+}
