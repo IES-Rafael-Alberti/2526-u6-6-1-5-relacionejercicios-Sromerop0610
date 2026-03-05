@@ -70,4 +70,18 @@ class Circulo(
     }
 }
 
+class Triangulo : Figura {
+    val base: Int
+    val altura: Int
+
+    constructor(base: Int, altura: Int) : super("sin-color", "triangulo") {
+        println("[Triangulo:secondary] constructor(base, altura) -> constructor padre")
+        this.base = base
+        this.altura = altura
+    }
+
+    constructor(lado: Int) : this(base = lado, altura = lado) {
+        println("[Triangulo:secondary] constructor(lado) -> this(base, altura)")
+    }
+}
 
