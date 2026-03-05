@@ -85,3 +85,39 @@ class Triangulo : Figura {
     }
 }
 
+fun main() {
+
+    println("---- Rectangulo con constructor primario ----")
+    val r1 = Rectangulo("rojo", "rect1", 10, 20)
+
+    println()
+
+    println("---- Rectangulo con constructor secundario ----")
+    val r2 = Rectangulo(5, 8)
+
+    println()
+
+    println("---- Rectangulo cuadrado (constructor lado) ----")
+    val r3 = Rectangulo(6)
+
+    println()
+
+    println("---- Circulo con constructor primario ----")
+    val c1 = Circulo("azul", "circulo1", 7)
+
+    println()
+
+    println("---- Circulo con constructor secundario ----")
+    val c2 = Circulo(4)
+
+    println()
+
+    println("---- Triangulo (subclase sin constructor primario) ----")
+    val t1 = Triangulo(3, 5)
+
+    println()
+
+    println("---- Triangulo cuadrado (constructor secundario) ----")
+    val t2 = Triangulo(4)
+}
+
