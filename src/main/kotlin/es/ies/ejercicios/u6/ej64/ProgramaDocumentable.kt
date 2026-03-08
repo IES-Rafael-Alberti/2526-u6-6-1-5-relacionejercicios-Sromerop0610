@@ -29,7 +29,7 @@ abstract class PlantillaInforme : Resumible {
      * @return el informe generado en formato texto
      */
     fun generar(titulo: String, items: List<Resumible>): String {
-        // Crea el StringBuilder
+
         val sb = StringBuilder()
 
         sb.appendLine(cabecera(titulo))
