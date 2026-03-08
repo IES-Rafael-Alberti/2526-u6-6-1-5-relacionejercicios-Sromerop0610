@@ -42,7 +42,14 @@ class Rectangulo(
         println("[Rectangulo:secondary] constructor(ancho, alto)")
     }
 
-    // TODO: añade otro constructor secundario que cree un cuadrado (lado -> ancho=alto)
+    constructor(lado: Int) : this(
+        color = "sin-color",
+        etiqueta = "cuadrado",
+        ancho = lado,
+        alto = lado
+    ) {
+        println("[Rectangulo:secondary] constructor(lado) -> cuadrado")
+    }
 }
 
 class Circulo(
@@ -54,25 +61,20 @@ class Circulo(
         println("[Circulo:init] radio=$radio")
     }
 
-    // TODO: añade al menos un constructor secundario que delegue con this(...)
+    constructor(radio: Int) : this(
+        color = "sin-color",
+        etiqueta = "circulo",
+        radio = radio
+    ) {
+        println("[Circulo:secondary] constructor(radio)")
+    }
 }
-
-/*
-Ejemplo importante (a implementar por el alumnado): subclase SIN constructor primario.
-
-Objetivo: practicar el caso en el que un constructor secundario puede delegar directamente
-al constructor de la clase padre.
-
-Instrucciones:
-- Descomenta el código.
-- Rellena el hueco `________` con la delegación correcta al constructor padre.
-- Sustituye los `TODO(...)` por valores/argumentos adecuados.
 
 class Triangulo : Figura {
     val base: Int
     val altura: Int
 
-    constructor(base: Int, altura: Int) : ________ {
+    constructor(base: Int, altura: Int) : super("sin-color", "triangulo") {
         println("[Triangulo:secondary] constructor(base, altura) -> constructor padre")
         this.base = base
         this.altura = altura
@@ -82,4 +84,40 @@ class Triangulo : Figura {
         println("[Triangulo:secondary] constructor(lado) -> this(base, altura)")
     }
 }
-*/
+
+fun main() {
+
+    println("---- Rectangulo con constructor primario ----")
+    val r1 = Rectangulo("rojo", "rect1", 10, 20)
+
+    println()
+
+    println("---- Rectangulo con constructor secundario ----")
+    val r2 = Rectangulo(5, 8)
+
+    println()
+
+    println("---- Rectangulo cuadrado (constructor lado) ----")
+    val r3 = Rectangulo(6)
+
+    println()
+
+    println("---- Circulo con constructor primario ----")
+    val c1 = Circulo("azul", "circulo1", 7)
+
+    println()
+
+    println("---- Circulo con constructor secundario ----")
+    val c2 = Circulo(4)
+
+    println()
+
+    println("---- Triangulo (subclase sin constructor primario) ----")
+    val t1 = Triangulo(3, 5)
+
+    println()
+
+    println("---- Triangulo cuadrado (constructor secundario) ----")
+    val t2 = Triangulo(4)
+}
+
